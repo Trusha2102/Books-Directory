@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../src/db');
 
 const Book = sequelize.define('Book', {
   id: {
@@ -7,6 +7,11 @@ const Book = sequelize.define('Book', {
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
+  },
+  book_id: {
+    type: DataTypes.UUID,
+    allowNull: false,
+    defaultValue: DataTypes.UUIDV4, 
   },
   title: {
     type: DataTypes.STRING,
@@ -19,6 +24,11 @@ const Book = sequelize.define('Book', {
   genre: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  available: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
   },
 });
 
