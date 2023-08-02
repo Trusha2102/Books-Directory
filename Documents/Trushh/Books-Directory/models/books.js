@@ -1,7 +1,7 @@
-import { DataTypes } from 'sequelize';
-import { define } from '../src/db';
+const { DataTypes } = require('sequelize');
+const sequelize = require('../src/db');
 
-const Book = define('Book', {
+const Book = sequelize.define('Book', {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -32,4 +32,4 @@ const Book = define('Book', {
   },
 });
 
-export default Book;
+module.exports = Book;
