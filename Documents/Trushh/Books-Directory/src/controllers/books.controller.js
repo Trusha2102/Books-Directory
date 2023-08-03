@@ -39,7 +39,7 @@ const updateBook = async (req, res) => {
 
     // If the book record is not found, respond with 404 Not Found
     if (!bookToUpdate) {
-      return res.status(404).json({ error: 'Book not found' });
+      return res.status(404).json({ error: "Book not found" });
     }
 
     // Update the book record with the new data
@@ -54,7 +54,7 @@ const updateBook = async (req, res) => {
     // Respond with the updated book record
     res.json(bookToUpdate);
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -67,16 +67,16 @@ const deleteBook = async (req, res) => {
 
     // If the book record is not found, respond with 404 Not Found
     if (!bookToDelete) {
-      return res.status(404).json({ error: 'Book not found' });
+      return res.status(404).json({ error: "Book not found" });
     }
 
     // Delete the book record from the database
     await bookToDelete.destroy();
 
     // Respond with a success message
-    res.json({ message: 'Book deleted successfully' });
+    res.json({ message: "Book deleted successfully" });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -84,5 +84,5 @@ module.exports = {
   getAllBooks,
   createBook,
   updateBook,
-  deleteBook
+  deleteBook,
 };
